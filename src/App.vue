@@ -1,30 +1,20 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <AppBar></AppBar>
+  <div
+    class="relative flex min-h-screen justify-center overflow-hidden bg-gray-50 py-6 sm:py-12"
+  >
+    <router-view />
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import AppBar from "./components/AppBar.vue";
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+@Options({
+  components: {
+    AppBar,
+  },
+})
+export default class HomeView extends Vue {}
+</script>
