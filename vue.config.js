@@ -8,5 +8,7 @@ module.exports = defineConfig({
       }
     }
   },
-  transpileDependencies: true,
+  transpileDependencies: [
+    'vuex-module-decorators'
+  ]
 });

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 h-fit"
+    class="bg-white px-5 py-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto max-w-lg rounded-lg h-fit w-80 sm:w-96"
   >
     <slot></slot>
   </div>

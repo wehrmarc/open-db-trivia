@@ -10,7 +10,7 @@ declare module "trivia" {
           response_code: number;
           results: TriviaQuestion[];
         }
-          
+        
         interface TriviaQuestion {
           category: string;
           type: string;

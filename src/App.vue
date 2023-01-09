@@ -1,9 +1,9 @@
 <template>
   <AppBar></AppBar>
   <div
-    class="relative flex min-h-screen justify-center overflow-hidden bg-gray-50 py-6 sm:py-12"
+    class="relative flex min-h-screen justify-center overflow-hidden bg-gray-100 py-6 sm:py-12"
   >
-    <router-view />
+    <router-view :key="$route.path" />
   </div>
 </template>
 
