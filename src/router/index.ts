@@ -6,11 +6,6 @@ import store from "@/store";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
     path: "/quiz/:difficulty",
     name: "quiz",
     component: QuizView,
