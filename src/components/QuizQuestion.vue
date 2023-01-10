@@ -2,11 +2,11 @@
   <QCard>
     <fieldset>
       <h3
-        class="text-xs font-medium leading-tight tracking-tight text-gray-500 dark:text-white"
+        class="text-xs font-medium leading-tight tracking-tight text-gray-500"
         v-html="question.category"
       ></h3>
       <p
-        class="pb-4 pt-2 text-xs sm:text-sm font-medium leading-tight tracking-tight max-w-xs text-gray-900 dark:text-white break-words"
+        class="pb-4 pt-2 text-xs sm:text-sm font-medium leading-tight tracking-tight max-w-xs text-gray-900 break-words"
         v-html="question.question"
       ></p>
       <div
@@ -21,12 +21,12 @@
           type="radio"
           :name="question.question"
           :value="answer"
-          class="w-4 sm:h-6 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+          class="w-4 sm:h-6 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
         />
         <label
           for="answer"
           v-html="answer"
-          class="block ml-2 text-xs sm:text-sm font-medium align-middle text-gray-900 dark:text-gray-300"
+          class="block ml-2 text-xs sm:text-sm font-medium align-middle text-gray-900"
         >
         </label>
         <template v-if="answered">
@@ -41,7 +41,7 @@
       <button
         :disabled="answered || !selectedAnswer"
         @click="answer"
-        class="w-full disabled:opacity-25 text-white bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+        class="w-full disabled:opacity-25 text-white bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
       >
         Answer
       </button>

@@ -9,7 +9,6 @@ declare module '@vue/runtime-core' {
       easyQuestions: TriviaQuestion[],
       mediumQuestions: TriviaQuestion[],
       hardQuestions: TriviaQuestion[],
-      
     }
   
     interface ComponentCustomProperties {
