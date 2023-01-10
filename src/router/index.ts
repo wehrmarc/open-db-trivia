@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
 import QuizView from "@/views/QuizView.vue";
 import store from "@/store";
@@ -26,9 +25,17 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== "login" && !store.getters["trivia/getToken"])
+  if (to.name !== "login" && !store.getters["trivia/getToken"]) {
     next({ name: "login" });
-  else next();
+    return;
+  }
+
+  if (to.path === "/") {
+    next({ name: "quiz", params: { difficulty: "easy" } });
+    return;
+  }
+
+  next();
 });
 
 export default router;
