@@ -9,7 +9,7 @@
       <div class="block sm:hidden">
         <button
           @click="toggleMenu"
-          class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white"
+          class="flex items-center px-3 py-2 border rounded text-blue-500 hover:text-gray-400 border-gray hover:border-gray-400"
         >
           <font-awesome-icon icon="fa-solid fa-bars" />
         </button>
@@ -20,7 +20,7 @@
       >
         <div class="text-sm sm:flex-grow">
           <div
-            class="font-semibold leading-tight tracking-tight rounded-md hover:text-gray-300 sm:inline-block mt-2 sm:mt-0 ml-2 mr-6"
+            class="font-semibold leading-tight tracking-tight sm:inline-block mt-2 sm:mt-0 ml-2 mr-6"
           >
             <router-link
               :to="{ name: 'quiz', params: { difficulty: 'easy' } }"
@@ -29,13 +29,14 @@
                   ? 'text-blue-500'
                   : 'text-gray-900',
               ]"
+              class="hover:text-gray-400"
               aria-current="page"
             >
               Easy
             </router-link>
           </div>
           <div
-            class="font-semibold leading-tight tracking-tight rounded-md hover:text-gray-300 sm:inline-block mt-2 sm:mt-1 ml-2 mr-6"
+            class="font-semibold leading-tight tracking-tight sm:inline-block mt-2 sm:mt-1 ml-2 mr-6"
           >
             <router-link
               :to="{ name: 'quiz', params: { difficulty: 'medium' } }"
@@ -44,13 +45,14 @@
                   ? 'text-blue-500'
                   : 'text-gray-900',
               ]"
+              class="hover:text-gray-400"
               aria-current="page"
             >
               Medium
             </router-link>
           </div>
           <div
-            class="font-semibold leading-tight tracking-tight rounded-md hover:text-gray-300 sm:inline-block mt-2 sm:mt-1 ml-2 mr-6"
+            class="font-semibold leading-tight tracking-tight sm:inline-block mt-2 sm:mt-1 ml-2 mr-6"
           >
             <router-link
               :to="{ name: 'quiz', params: { difficulty: 'hard' } }"
@@ -60,6 +62,7 @@
                   : 'text-gray-900',
               ]"
               aria-current="page"
+              class="hover:text-gray-400"
             >
               Hard
             </router-link>
@@ -69,7 +72,7 @@
           <a
             @click="logout"
             href="#"
-            class="no-underline inline-block text-xs px-2 py-2 leading-none font-semibold border rounded text-gray-900 border-grey hover:border-transparent hover:text-teal hover:bg-white ml-2 mt-2 sm:mt-0"
+            class="no-underline inline-block text-xs px-2 py-2 leading-none font-semibold border rounded text-gray-900 hover:text-gray-400 border-gray hover:border-gray-400 ml-2 mt-2 sm:mt-0"
             >Log out</a
           >
         </div>
