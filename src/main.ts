@@ -10,7 +10,7 @@ import "../styles/global.scss";
 
 library.add(fas);
 
-const app = createApp(App)
+createApp(App)
   .use(store)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)

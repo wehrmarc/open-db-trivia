@@ -11,7 +11,7 @@
       ></p>
       <div
         class="flex gap-1 items-center mb-4"
-        v-for="answer in possibleAnswers"
+        v-for="answer in question.possible_answers"
         :key="answer"
       >
         <input
@@ -52,7 +52,9 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import QCard from "@/components/Q-Card.vue";
-import { TriviaQuestion } from "trivia";
+import { TriviaQuestionModel } from "@/types/TriviaQuestionModel";
+import TriviaModule from "@/store/modules/trivia";
+import { getModule } from "vuex-module-decorators";
 
 @Options({
   components: {
@@ -65,43 +67,29 @@ import { TriviaQuestion } from "trivia";
   },
 })
 export default class QuizQuestion extends Vue {
-  question!: TriviaQuestion;
-  answered = false;
+  triviaModule!: TriviaModule;
+
+  question!: TriviaQuestionModel;
   selectedAnswer = "";
+  answered = false;
+
+  created(): void {
+    this.triviaModule = getModule(TriviaModule, this.$store);
+  }
+
+  mounted(): void {
+    if (this.question.selected_answer.length > 0) {
+      this.selectedAnswer = this.question.selected_answer;
+      this.answered = true;
+    }
+  }
 
   answer(): void {
     this.answered = true;
-
-    // if (this.selectedAnswer === this.question.correct_answer) {
-    // }
-  }
-
-  get possibleAnswers() {
-    return this.shuffleAnswers([
-      this.question.correct_answer,
-      ...this.question.incorrect_answers,
-    ]).map(this.unEscape);
-  }
-
-  shuffleAnswers(allAnswers: string[]): string[] {
-    for (let i = allAnswers.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [allAnswers[i], allAnswers[j]] = [allAnswers[j], allAnswers[i]];
-    }
-    return allAnswers;
-  }
-
-  unEscape(safe: string): string {
-    return decodeURIComponent(
-      encodeURIComponent(
-        safe
-          .replace(/&lt;/g, "<")
-          .replace(/&lt;/g, "<")
-          .replace(/&quot;/g, '"')
-          .replace(/&#39;/g, "'")
-          .replace(/&amp;/g, "&")
-      )
-    );
+    this.triviaModule.answerQuestion({
+      question: this.question,
+      selectedAnswer: this.selectedAnswer,
+    });
   }
 }
 </script>

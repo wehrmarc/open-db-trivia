@@ -21,7 +21,7 @@ module.exports = {
         "endOfLine": "auto"
       },
     ],
-    "max-len": ["error", 300, 2, {
+    "max-len": ["error", 1000, 2, {
       ignoreComments: false,
       ignoreRegExpLiterals: true,
       ignoreStrings: false,
