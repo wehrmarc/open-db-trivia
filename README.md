@@ -1,5 +1,9 @@
 # open-db-trivia
 
+Hosted here:
+
+https://open-db-trivia.web.app/login
+
 ## Project setup
 ```
 yarn install
